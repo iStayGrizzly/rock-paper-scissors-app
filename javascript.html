@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    
+</head>
+
+<body>
+
+    <button onclick="game()">Click me</button>
+
+<script>
+
+function computerPlay(){
+   let randomNum = Math.floor(Math.random() * 3) +1; 
+if (randomNum == 1){
+    return "ROCK";}
+
+    else if (randomNum == 2){
+        return "SCISSORS";}
+        else {
+            return "PAPER";}
+}
+
+function rps(){
+
+let playerSelection = prompt("Choose Rock, Paper or Scissors").toUpperCase;
+let computerSelection = computerPlay()
+
+let playerScore = 0;
+let computerScore = 0;
+
+    if (playerSelection == "ROCK" && computerSelection == "SCISSORS"){
+        playerScore++;
+
+let result = "Congrats! You win this round!"
+        + '\n'
+        + " Your score: " + playerScore
+        + '\n'
+        + " Computer Score: " + computerScore
+        return result;}
+
+   else if (playerSelection == "SCISSORS" && computerSelection == "PAPER"){
+       playerScore++;
+
+    let result = "Congrats! You win this round!"
+        + '\n'
+        + " Your score: " + playerScore
+        + '\n'
+        + " Computer Score: " + computerScore
+        return result;}
+
+    else if (playerSelection == "PAPER" && computerSelection == "ROCK"){
+        playerScore++;
+
+        let result = "Congrats! You win this round!"
+        + '\n'
+        + " Your score: " + playerScore
+        + '\n'
+        + " Computer Score: " + computerScore
+        return result;}
+
+    else if (playerSelection == computerSelection){
+        let result = "Tie! Oh no, let\'s play again"
+        + '\n'
+        + " Your score: " + playerScore
+        + '\n'
+        + " Computer Score: " + computerScore
+        return result;}
+
+        else {
+        computerScore++
+        let result = "You lose this round, better luck next time!"
+        + '\n'
+        + " Your score: " + playerScore
+        + '\n'
+        + " Computer Score: " + computerScore
+        return result;}
+        } 
+
+
+
+
+function game(){
+
+rps();
+rps();
+rps();
+rps();
+rps();
+
+        } 
+
+
+
+</script>
+
+
+</body>
+
+</html>
+
