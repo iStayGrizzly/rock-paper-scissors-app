@@ -2,13 +2,20 @@
 
 <head>
     
+
 </head>
 
 <body>
 
-    <button onclick="game()">Click me</button>
+    <button style= "background-color:lightsalmon; cursor: pointer; font-size: large;" onclick="game()">Rock Paper Scissors!</button>
 
 <script>
+
+// Created March 25, 2020
+// For the Odin Project - Rock Paper Scissors Assignment
+
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay(){
    let randomNum = Math.floor(Math.random() * 3) +1; 
@@ -23,41 +30,40 @@ if (randomNum == 1){
 
 function rps(){
 
-let playerSelection = prompt("Choose Rock, Paper or Scissors").toUpperCase;
+let playerSelection = prompt("Choose Rock, Paper or Scissors");
+playerSelection = playerSelection.toUpperCase();
 let computerSelection = computerPlay()
 
-let playerScore = 0;
-let computerScore = 0;
 
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS"){
         playerScore++;
 
-let result = "Congrats! You win this round!"
+let result = "Congrats! You win this round! " + playerSelection + " beats " + computerSelection + " !" 
         + '\n'
         + " Your score: " + playerScore
         + '\n'
         + " Computer Score: " + computerScore
-        return result;}
+        console.log(result);}
 
    else if (playerSelection == "SCISSORS" && computerSelection == "PAPER"){
        playerScore++;
 
-    let result = "Congrats! You win this round!"
+    let result = "Congrats! You win this round! " + playerSelection + " beats " + computerSelection + " !"
         + '\n'
         + " Your score: " + playerScore
         + '\n'
         + " Computer Score: " + computerScore
-        return result;}
+        console.log(result);}
 
     else if (playerSelection == "PAPER" && computerSelection == "ROCK"){
         playerScore++;
 
-        let result = "Congrats! You win this round!"
+        let result = "Congrats! You win this round! " + playerSelection + " beats " + computerSelection + " !"
         + '\n'
         + " Your score: " + playerScore
         + '\n'
         + " Computer Score: " + computerScore
-        return result;}
+        console.log(result);}
 
     else if (playerSelection == computerSelection){
         let result = "Tie! Oh no, let\'s play again"
@@ -65,32 +71,47 @@ let result = "Congrats! You win this round!"
         + " Your score: " + playerScore
         + '\n'
         + " Computer Score: " + computerScore
-        return result;}
+        console.log(result);}
 
         else {
         computerScore++
-        let result = "You lose this round, better luck next time!"
+        let result = "You lose this round, better luck next time! "+ computerSelection + " beats " + playerSelection + " !"
         + '\n'
         + " Your score: " + playerScore
         + '\n'
         + " Computer Score: " + computerScore
-        return result;}
+        console.log(result);}
         } 
 
-
+function finalScore(){
+    if (playerScore == computerScore){
+        console.log("It's a tie! Let's play again?")
+    }
+    else if (playerScore > computerScore){
+        console.log( "Congrats! You win this round!")
+    }
+    else {
+        console.log("Computer wins this round, better luck next time!"
+        + '\n'
+        + " Final Score: " + playerScore + " to " + computerScore);
+    }
+}
 
 
 function game(){
+playerScore = 0;
+computerScore = 0;
 
 rps();
 rps();
 rps();
 rps();
 rps();
+        
 
-        } 
+finalScore();
 
-
+}
 
 </script>
 
